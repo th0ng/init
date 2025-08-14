@@ -57,3 +57,4 @@ lspconfig.gopls.setup {
 	}
 }
 
+vim.o.winborder = 'rounded'

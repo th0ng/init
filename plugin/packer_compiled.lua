@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1748459687/share/lua/5.1/?.lua;/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1748459687/share/lua/5.1/?/init.lua;/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1748459687/lib/luarocks/rocks-5.1/?.lua;/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1748459687/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1748459687/lib/lua/5.1/?.so"
+local package_path_str = "/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?.lua;/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?/init.lua;/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?.lua;/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/thonghoangdanh/.cache/nvim/packer_hererocks/2.1.1753364724/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,8 +79,13 @@ _G.packer_plugins = {
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["blame_line.nvim"] = {
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15blame_line\frequire\0" },
+    loaded = true,
+    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/blame_line.nvim",
+    url = "https://github.com/braxtons12/blame_line.nvim"
+  },
   catppuccin = {
-    config = { "\27LJ\2\n@\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0!colorscheme catppuccin-mocha\bcmd\bvim\0" },
     loaded = true,
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
@@ -110,23 +115,15 @@ _G.packer_plugins = {
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["fine-cmdline.nvim"] = {
-    loaded = true,
-    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/fine-cmdline.nvim",
-    url = "https://github.com/VonHeikemen/fine-cmdline.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gopher.nvim"] = {
-    config = { "\27LJ\2\n8\0\2\5\0\3\0\a6\2\0\0'\4\1\0B\2\2\0029\2\2\2\18\4\1\0B\2\2\1K\0\1\0\nsetup\vgopher\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/opt/gopher.nvim",
-    url = "https://github.com/olexsmir/gopher.nvim"
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -147,11 +144,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -218,6 +210,11 @@ _G.packer_plugins = {
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["smear-cursor.nvim"] = {
+    loaded = true,
+    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/smear-cursor.nvim",
+    url = "https://github.com/sphamba/smear-cursor.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -232,21 +229,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  vscode = {
+    loaded = true,
+    path = "/Users/thonghoangdanh/.local/share/nvim/site/pack/packer/start/vscode",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0!colorscheme catppuccin-mocha\bcmd\bvim\0", "config", "catppuccin")
-time([[Config for catppuccin]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType go ++once lua require("packer.load")({'gopher.nvim'}, { ft = "go" }, _G.packer_plugins)]]
-time([[Defining lazy-load filetype autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: blame_line.nvim
+time([[Config for blame_line.nvim]], true)
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15blame_line\frequire\0", "config", "blame_line.nvim")
+time([[Config for blame_line.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

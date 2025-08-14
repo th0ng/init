@@ -2,6 +2,8 @@
 vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
+vim.opt.autoread = true
+
 -- Tab
 vim.opt.tabstop = 2                 -- number of visual spaces per TAB
 vim.opt.softtabstop = 2             -- number of spacesin tab when editing
@@ -14,6 +16,7 @@ vim.opt.relativenumber = true       -- add numbers to each line on the left side
 vim.opt.cursorline = true           -- highlight cursor line underneath the cursor horizontally
 vim.opt.splitbelow = true           -- open new vertical split bottom
 vim.opt.splitright = true           -- open new horizontal splits right
+vim.opt.showmode = false
 
 -- Searching
 vim.opt.incsearch = true            -- search as characters are entered

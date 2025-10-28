@@ -29,8 +29,6 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
--- Debugging go test
-
 -- NvimTree
 vim.keymap.set('n', '<leader>b', vim.cmd.NvimTreeToggle)
 vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeFindFile)

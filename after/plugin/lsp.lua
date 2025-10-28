@@ -2,18 +2,6 @@
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = 'yes'
 
-local lspconfig = require('lspconfig')
-local util = require "lspconfig/util"
-
--- Add cmp_nvim_lsp capabilities settings to lspconfig
--- This should be executed before you configure any language server
-local lspconfig_defaults = lspconfig.util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
-
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "gopls", "ts_ls", "vue_ls", "vtsls" }
@@ -38,23 +26,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'g.', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end,
 })
-
-lspconfig.gopls.setup {
-	on_attach = lspconfig_defaults.on_attach,
-	capabilities = lspconfig_defaults.capabilities,
-	cmd = {"gopls"},
-	filetype = { "go", "gomod", "gowork", "gotmpl" },
-	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-	settings = {
-		gopls = {
-			completeUnimported = true,
-			usePlaceholders = true,
-			analyses = {
-				ununsedparams = true,
-			},
-			buildFlags = {"-tags=ittest"},
-		}
-	}
-}
 
 vim.o.winborder = 'rounded'

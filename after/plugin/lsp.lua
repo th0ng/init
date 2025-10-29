@@ -2,9 +2,28 @@
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = 'yes'
 
+
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "gopls", "ts_ls", "vue_ls", "vtsls" }
+})
+
+vim.lsp.config("jdtls", {})
+vim.lsp.enable("jdtls")
+
+vim.lsp.config("gopls", {
+  cmd = {"gopls"},
+	filetype = { "go", "gomod", "gowork", "gotmpl" },
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				ununsedparams = true,
+			},
+			buildFlags = {"-tags=ittest"},
+		}
+	}
 })
 
 -- This is where you enable features that only work

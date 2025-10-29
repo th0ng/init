@@ -110,28 +110,44 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim"
   },
   {
-  "sphamba/smear-cursor.nvim",
+    "sphamba/smear-cursor.nvim",
 
-  opts = {
-    -- Smear cursor when switching buffers or windows.
-    smear_between_buffers = true,
+    opts = {
+      -- Smear cursor when switching buffers or windows.
+      smear_between_buffers = true,
 
-    -- Smear cursor when moving within line or to neighbor lines.
-    -- Use `min_horizontal_distance_smear` and `min_vertical_distance_smear` for finer control
-    smear_between_neighbor_lines = true,
+      -- Smear cursor when moving within line or to neighbor lines.
+      -- Use `min_horizontal_distance_smear` and `min_vertical_distance_smear` for finer control
+      smear_between_neighbor_lines = true,
 
-    -- Draw the smear in buffer space instead of screen space when scrolling
-    scroll_buffer_space = true,
+      -- Draw the smear in buffer space instead of screen space when scrolling
+      scroll_buffer_space = true,
 
-    -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
-    -- Smears will blend better on all backgrounds.
-    legacy_computing_symbols_support = false,
+      -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
+      -- Smears will blend better on all backgrounds.
+      legacy_computing_symbols_support = false,
 
-    -- Smear cursor in insert mode.
-    -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
-    smear_insert_mode = true,
+      -- Smear cursor in insert mode.
+      -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
+      smear_insert_mode = true,
+    },
   },
-}
+  {
+    'mfussenegger/nvim-jdtls'
+  },
+
+  -- Render markdown
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
+
+  { "sitiom/nvim-numbertoggle" }
 }, {
   install = { colorscheme = { "kanagawa-dragon" } },  -- Default colorscheme on install
   checker = { enabled = true, notify = false },  -- Auto-update check

@@ -57,8 +57,10 @@ require("lazy").setup({
     as = "kanagawa",
   },
 
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
   {
-    'nvim-treesitter/nvim-treesitter'
+    "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"
   },
   {
     'nvim-treesitter/playground'

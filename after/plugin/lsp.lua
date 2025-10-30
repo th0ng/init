@@ -12,8 +12,6 @@ vim.lsp.config("jdtls", {})
 vim.lsp.enable("jdtls")
 
 vim.lsp.config("gopls", {
-  cmd = {"gopls"},
-	filetype = { "go", "gomod", "gowork", "gotmpl" },
 	settings = {
 		gopls = {
 			completeUnimported = true,

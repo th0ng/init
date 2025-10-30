@@ -84,6 +84,10 @@ require("lazy").setup({
 	},
 
   {
+    "neovim/nvim-lspconfig"
+  },
+
+  {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional
@@ -159,6 +163,19 @@ require("lazy").setup({
       fuzzy = { implementation = "prefer_rust_with_warning" }
     },
     opts_extend = { "sources.default" }
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
   }
 }, {
   install = { colorscheme = { "kanagawa-dragon" } },

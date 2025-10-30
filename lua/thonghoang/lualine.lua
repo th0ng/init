@@ -28,10 +28,10 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {},
-    lualine_x = {'lsp_status'},
-    lualine_y = {'filename'},
+    lualine_b = {'branch'},
+    lualine_c = {'diff', 'diagnostics'},
+    lualine_x = {},
+    lualine_y = {'lsp_status'},
     lualine_z = {'location'}
   },
   tabline = {},

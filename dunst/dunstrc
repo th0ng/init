@@ -6,4 +6,5 @@
     font = Iosevka Nerd Font 12
     offset = 0x0
     padding = 20
+    alignment = center
     horizontal_padding = 30

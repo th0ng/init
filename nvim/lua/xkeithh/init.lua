@@ -1,0 +1,8 @@
+require("xkeithh.lazy")
+require("xkeithh.options")
+require("xkeithh.remap")
+require("xkeithh.nvim-tree")
+require("xkeithh.mason")
+require("xkeithh.diagnostic")
+require("xkeithh.autocmds")
+require("xkeithh.telescope")

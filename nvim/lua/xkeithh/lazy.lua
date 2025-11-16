@@ -90,11 +90,6 @@ require("lazy").setup({
     },
   },
 
-  {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  },
-
   -- indenation guide
   {
     "lukas-reineke/indent-blankline.nvim"
@@ -106,7 +101,6 @@ require("lazy").setup({
   -- Render markdown
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
@@ -147,11 +141,34 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
     opts = {
-      -- configurations go here
+      show_modified = true,
     },
+  },
+
+  {
+    'petertriho/nvim-scrollbar',
+    opts = {}
+  },
+
+  {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  },
+
+  {
+    'mhinz/vim-signify',
+  },
+
+  {
+    'folke/noice.nvim',
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   }
 }, {
-  install = { colorscheme = { "kanagawa-dragon" } },
+  install = { colorscheme = { "carbonfox" } },
   checker = { enabled = true, notify = false },
-  change_detection = { notify = false },  -- Avoid notification spam
+  change_detection = { notify = false },
 })

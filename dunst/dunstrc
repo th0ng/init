@@ -1,0 +1,9 @@
+[global]
+    origin = center
+    transparency = 10
+    frame_width = 2
+    frame_color = "#89b4fa"
+    offset = 0x0
+    padding = 20
+    alignment = center
+    horizontal_padding = 30

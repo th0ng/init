@@ -2,11 +2,11 @@
     "layer": "top",
     "position": "top",
     "height": 24,
-    "spacing": 5,
-
+    "reload_style_on_change": true,
+    "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["hyprland/language", "network", "bluetooth", "wireplumber", "battery", "clock"],
+    "modules-right": ["group/tray-expander", "network", "wireplumber", "battery", "clock"],
 
     "hyprland/workspaces": {
       "on-click": "activate",
@@ -43,9 +43,16 @@
     "wireplumber": {
         "format": "{icon}",
         "format-icons": {
-          "default": [""]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
         },
-        "format-muted": "󰖁",
+        "format-muted": " ",
         "max-volume": 100,
         "scroll-step": 5,
         "on-click": "~/.config/waybar/wiremix.sh"
@@ -77,7 +84,13 @@
         "format-ethernet": "\udb83\udc9d",
         "format-wifi": "{icon}",
         "format-disconnected": "\udb83\udc9c",
-        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤢 ",
+            "󰤨 "
+        ],
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected",
@@ -87,9 +100,22 @@
     "hyprland/language": {
         "format": "{short}"
     },
+    "group/tray-expander": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 400,
+        "click-to-reveal": true
+      },
+      "modules": ["custom/expand-icon", "tray", "bluetooth"]
+    },
+
+    "custom/expand-icon": {
+      "format": "",
+      "tooltip": false
+    },
 
     "tray": {
-        "icon-size": 16,
-        "spacing": 16
+        "icon-size": 14,
+        "spacing": 8
     },
 }

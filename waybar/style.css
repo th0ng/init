@@ -36,16 +36,22 @@ window#waybar{
     color: @foreground-inactive;
 }
 
-#wireplumber,
+#wireplumber {
+  all:unset;
+  padding: 0 6px;
+}
+
+#custom-expand-icon {
+  all:unset;
+  padding: 0 8px;
+}
+
 #battery,
-#idle_inhibitor,
-#language,
 #network,
 #bluetooth,
 #tray,
 #clock {
     all:unset;
     padding: 0 8px;
-    font-size: 14px;
 }
 

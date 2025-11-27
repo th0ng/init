@@ -169,11 +169,6 @@ require("lazy").setup({
   },
 
   {
-    'th0ng/startup.nvim',
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
-  },
-
-  {
     'akinsho/toggleterm.nvim',
     version = "*",
     config = true,
